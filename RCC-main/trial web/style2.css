@@ -1,0 +1,151 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.search-container {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    transition: width 0.3s ease-in-out;
+}
+
+
+/* .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #0056b3;
+    clip-path: polygon(100% 0%, 0 50%, 100% 100%);
+    transition: background-color 0.3s ease-in-out;
+} */
+
+/* .search-container:hover .search-icon {
+    background-color: #003c80;
+} */
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.product {
+    width: 40%;
+    padding: 20px;
+    margin: 30px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.5s ;
+   
+}
+
+.catalog :hover{
+    /* background-color: rgb(132, 197, 210); */
+    transform: scale(1.1);
+    font-size: 0%;
+}
+
+.product h2 {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+.product p {
+    font-size: 16px;
+    margin: 0;
+}
+.product img{
+    height:300px;
+    width: 300px;
+    padding-left: 30px;
+
+
+}
+
+nav{
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+nav li a{
+    padding: 10px;
+    display: grid;
+    margin: 10px;
+
+}
+
+nav a:hover, nav a:active, nav a:visited, nav a:link{
+    color: white;
+    text-decoration: none;
+    display: grid;
+    transition: 0.5s;
+    border-radius: 50px;
+
+
+}
+
+nav a:hover,nav a:active{
+    background-color: whitesmoke;
+    transform: scale(1.1);
+    color: black;
+}
+
+nav ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* justify-content: center; */
+    padding: 5px;
+    
+    
+}
+
+nav ul li{
+    list-style: none;
+   
+}
+/* 
+@media (max-width: 768px) {
+    .product {
+        width: calc(30% - 20px);
+    }
+} */

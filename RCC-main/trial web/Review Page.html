@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Reviews</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        let map;
+    
+        async function initMap() {
+        const { Map } = await google.maps.importLibrary("maps");
+    
+        map = new Map(document.getElementById("map"), {
+            center: { lat:-1.286389, lng: 36.817223 },
+            zoom: 15,
+        });
+        }
+    
+        initMap();
+    
+        function openChartInNewTab() {
+                // Open chart.html in a new tab
+                window.open('chart.html', '_blank');
+            }
+    
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">Product Reviews</h1>
+    </header>
+    <!--Beginning of navigation section-->
+    <nav>
+        <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="Camping Equipment.html">Camping Equipment</a></li>
+        <li><a href="Furniture.html">Furniture</a></li>
+        <li><a href="Review Page.html">Review Page</a></li>
+        <li><a href="Basket.html">Basket</a></li>
+        <li><a href="Offers and Packages.html">Offers and Packages</a></li>
+        </ul>
+        <button class="weather" onclick="openChartInNewTab()">Camp area Weather</button>
+    </nav>
+  <!--End of navigation section-->
+    <section id="reviews">
+        <h2>Leave a Review</h2>
+        <form id="review-form">
+            <label for="product-name">Product Name:</label>
+            <input type="text" class="inpt" name="product-name" required><br>
+
+            <label for="user-name">Your Name:</label>
+            <input type="text" id="user-name" class="inpt" name="user-name" required><br>
+
+            <label for="rating">Rating:</label>
+            <select id="rating"class="inpt" name="rating">
+                <option value="5">5 stars</option>
+                <option value="4">4 stars</option>
+                <option value="3">3 stars</option>
+                <option value="2">2 stars</option>
+                <option value="1">1 star</option>
+            </select><br>
+
+            <label  for="review">Review:</label>
+            <textarea class="inpt" id="review" name="review" rows="4" required></textarea><br>
+
+            <input type="submit" value="Submit Review">
+        </form>
+    </section>
+
+    <section id="all-reviews">
+        <h2>All Reviews</h2>
+        <!-- Display existing reviews here -->
+    </section>
+
+    <footer>
+        <!-- Footer content here -->
+    </footer>
+</body>
+</html>

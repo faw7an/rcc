@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping Equipment Basket</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        let map;
+    
+        async function initMap() {
+        const { Map } = await google.maps.importLibrary("maps");
+    
+        map = new Map(document.getElementById("map"), {
+            center: { lat:-1.286389, lng: 36.817223 },
+            zoom: 15,
+        });
+        }
+    
+        initMap();
+    
+        function openChartInNewTab() {
+                // Open chart.html in a new tab
+                window.open('chart.html', '_blank');
+            }
+    
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+        }
+        .product img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+        .product-info {
+            flex: 1;
+        }
+        .product h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .product p {
+            font-size: 14px;
+        }
+        .checkout-button {
+            display: block;
+            text-align: right;
+            margin-top: 20px;
+            
+        }
+        #checkout{
+            background-color: #e01414;
+            border-radius: 50px;
+            padding: 10px 30px 10px 30px;
+            color: white;
+            transition: transform 0.5s;
+
+        }
+        #checkout:hover{
+            transform: scale(1.1);
+            color: black;
+            background-color: #ddd;
+        }
+        .add-to-basket{
+            background-color: #dcaaaa;
+            border-radius: 30px;
+            padding: 0px 30px 0px 30px;
+            color: white;
+            /* transition: transform 0.5s; */
+        }
+        
+        .basket {
+            margin-top: 20px;
+        }
+        .basket-item {
+            display: flex;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+        }
+        .basket-item img {
+            max-width: 50px;
+            margin-right: 20px;
+        }
+        .basket-item-info {
+            flex: 1;
+        }
+        .basket-item h3 {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        .basket-item p {
+            font-size: 14px;
+        }
+
+                
+nav{
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+/* nav style */
+nav li a{
+    padding: 10px;
+    display: grid;
+    margin: 10px;
+
+}
+
+nav a:hover, nav a:active, nav a:visited, nav a:link{
+    color: white;
+    text-decoration: none;
+    display: grid;
+    transition: 0.5s;
+    border-radius: 50px;
+
+
+}
+
+nav a:hover,nav a:active{
+    background-color: whitesmoke;
+    transform: scale(1.1);
+    color: black;
+}
+
+nav ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* justify-content: center; */
+    padding: 5px;
+    
+    
+}
+
+nav ul li{
+    list-style: none;
+   
+}
+             
+.weather{
+            background-color: #333;
+            padding: 10px;
+            font-size: 15px;
+            color: white;
+            border: none;
+            transition: transform 0.5s;
+        }
+
+        .weather:hover{
+            background-color: antiquewhite;
+            transform: scale(1.1);
+            border-radius: 50px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Camping Equipment Basket</h1>
+         <!--Beginning of navigation section-->
+         <nav>
+            <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="Camping Equipment.html">Camping Equipment</a></li>
+            <li><a href="Furniture.html">Furniture</a></li>
+            <li><a href="Review Page.html">Review Page</a></li>
+            <li><a href="Basket.html">Basket</a></li>
+            <li><a href="Offers and Packages.html">Offers and Packages</a></li>
+            </ul>
+            <button class="weather" onclick="openChartInNewTab()">Camp area Weather</button>
+        </nav>
+        <!--End of navigation section-->
+    </header>
+    <div class="container">
+        <div class="product">
+            <img src="images/8CabinTent-removebg-preview.png" alt="8 personCabinTent" >
+            <div class="product-info">
+                <h2>Camping Tent</h2>
+                <p>Spacious 8-person tent with rainfly.</p>
+                <p><strong>Price: &euro;99.99</strong></p>
+            </div>
+            <button class="add-to-basket" data-name="Camping Tent" data-price="99.99">Add to Basket</button>
+        </div>
+        <!-- Add more product entries as needed -->
+        <div class="checkout-button">
+            <button id="checkout">Checkout</button>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Your Basket</h2>
+        <div class="basket" id="basket">
+            <!-- Basket items will be displayed here -->
+        </div>
+    </div>
+    <script>
+        const addButtons = document.querySelectorAll('.add-to-basket');
+        const basket = document.getElementById('basket');
+
+        addButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                addItemToBasket(name, price);
+            });
+        });
+
+        function addItemToBasket(name, price) {
+            const basketItem = document.createElement('div');
+            basketItem.className = 'basket-item';
+
+            const itemHTML = `
+                <img src="images/8CabinTent-removebg-preview.png" alt="${name}">
+                <div class="basket-item-info">
+                    <h3>${name}</h3>
+                    <p><strong>Price: &euro;${price}</strong></p>
+                </div>
+            `;
+
+            basketItem.innerHTML = itemHTML;
+            basket.appendChild(basketItem);
+        }
+
+        document.getElementById('checkout').addEventListener('click', () => {
+            alert('Checkout functionality not implemented in this example.');
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Basket</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body> -->
+        <!--Beginning of navigation section-->
+        <!-- <nav>
+            <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="Camping Equipment.html">Camping Equipment</a></li>
+            <li><a href="Furniture.html">Furniture</a></li>
+            <li><a href="Review Page.html">Review Page</a></li>
+            <li><a href="Basket.html">Basket</a></li>
+            <li><a href="Offers and Packages.html">Offers and Packages</a></li>
+            </ul>
+        </nav> -->
+        <!--End of navigation section-->
+        <!-- <div class="container">
+            <h1>Cart</h1>
+            <div class="Shopping cart">
+                <div class="products">
+                    <div class="product">
+                        <img src="Images/orangebag.jpeg">
+                        <div class="product-info">
+                            <h3 class="product-name">Orange bag</h3>
+                            <h3 class="product-price">&euro;200</h3>
+                            <h4 class="product-offer">50%</h4>
+                            <p class="product quanity">Qnt:<input value="1" name=""></p>
+                            <p class="product-remove">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                <span class="remove">Remove</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="Images/8CabinTent.jpeg">
+                        <div class="product-info">
+                            <h3 class="product-name">8 person tent</h3>
+                            <h3 class="product-price">&euro;2000</h3>
+                            <h4 class="product-offer">45%</h4>
+                            <p class="product quanity">Qnt:<input value="1" name=""></p>
+                            <p class="product-remove">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                <span class="remove">Remove</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-total">
+                    <p>
+                        <span>Total Price</span>
+                        <span>&euro;1520</span>
+                    </p>
+                    <p>
+                        <span>Number of items</span>
+                        <span>3</span>
+                    </p>
+                    <p>
+                        <span>Your Save</span>
+                        <span>&euro;165</span>
+                    </p>
+                    <a href="#">Proceed to checkout</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html> -->

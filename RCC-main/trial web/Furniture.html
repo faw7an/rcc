@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping Furniture Catalog</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        let map;
+    
+        async function initMap() {
+        const { Map } = await google.maps.importLibrary("maps");
+    
+        map = new Map(document.getElementById("map"), {
+            center: { lat:-1.286389, lng: 36.817223 },
+            zoom: 15,
+        });
+        }
+    
+        initMap();
+    
+        function openChartInNewTab() {
+                // Open chart.html in a new tab
+                window.open('chart.html', '_blank');
+            }
+    
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            
+        }
+        .row{
+            display: flex;
+            justify-content: space-around;
+         
+        }
+                
+        .weather{
+            background-color: #333;
+            padding: 10px;
+            font-size: 15px;
+            color: white;
+            border: none;
+            transition: transform 0.5s;
+        }
+
+        .weather:hover{
+            background-color: antiquewhite;
+            transform: scale(1.1);
+            border-radius: 50px;
+            color: black;
+        }
+        .column {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 20px ;
+            display: inline-block;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(12, 10, 10, 0.5);
+            transition: transform 0.5s;
+        }
+        .column:hover{
+            background-color: antiquewhite;
+            transform: scale(1.1);
+        }
+
+        .column img {
+            width: 80%;
+            height: 60%;
+        }
+        .column h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .column p {
+            font-size: 14px;
+        }
+                        
+        nav{
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            
+        }
+
+        nav li a{
+            padding: 10px;
+            display: grid;
+            margin: 10px;
+
+        }
+
+        nav a:hover, nav a:active, nav a:visited, nav a:link{
+            color: white;
+            text-decoration: none;
+            display: grid;
+            transition: 0.5s;
+            border-radius: 50px;
+
+
+        }
+
+        nav a:hover,nav a:active{
+            background-color: whitesmoke;
+            transform: scale(1.1);
+            color: black;
+        }
+
+        nav ul{
+            padding: 0;
+            margin: 0;
+            display: flex;
+            /* justify-content: center; */
+            padding: 5px;
+            
+            
+        }
+
+        nav ul li{
+            list-style: none;
+        
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Camping Furniture Catalog</h1>
+        <nav>
+            <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="Camping Equipment.html">Camping Equipment</a></li>
+            <li><a href="Furniture.html">Furniture</a></li>
+            <li><a href="Review Page.html">Review Page</a></li>
+            <li><a href="Basket.html">Basket</a></li>
+            <li><a href="Offers and Packages.html">Offers and Packages</a></li>
+            </ul>
+            <button class="weather" onclick="openChartInNewTab()">Camp area Weather</button>
+        </nav>
+    </header>
+    <div class="container">
+    <div class="row">
+        <div class="column">
+            <img src="Images/outdoorchair-removebg-preview.png" alt="Camping Chair">
+            <hr>
+            <h2>Camping Chair</h2>
+            <p>Foldable and comfortable camping chair.</p>
+            <p><strong>Price: &euro;29.99</strong></p>
+        </div>
+        <div class="column">
+            <img src="Images/table-removebg-preview.png" alt="Camping Table">
+            <hr>
+            <h2>Camping Table</h2>
+            <p>Portable and lightweight camping table.</p>
+            <p><strong>Price: &euro;39.99</strong></p>
+        </div>
+        <div class="column">
+            <img src="Images/hammock_PNG35.png" alt="Hammock">
+            <hr>
+            <h2>Hammock</h2>
+            <p>Relaxing hammock for outdoor adventures.</p>
+            <p><strong>Price: &euro;12.39</strong></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <img src="Images/woolchair-removebg-preview.png" alt="woolchair">
+            <hr>
+            <h2>Wool chair</h2>
+            <p>Relaxing wool chair for outdoor adventures.</p>
+            <p><strong>Price: &euro;21.39</strong></p>
+        </div>
+        <div class="column">
+            <img src="Images/blacksleepingbag-removebg-preview.png" alt="sleeping_bag">
+            <hr>
+            <h2>Sleeping bag</h2>
+            <p>Non-straining sleeping bag.</p>
+            <p><strong>Price: &euro;12.39</strong></p>
+        </div>
+        <div class="column">
+            <img src="Images/campinggear-removebg-preview.png" alt="sleeping_bag">
+            <hr>
+            <h2>Sleeping bag</h2>
+            <p>Long sweet naps using this sleeping bag.</p>
+            <p><strong>Price: &euro;44.00</strong></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <img src="Images/furniture-removebg-preview.png" alt="sleeping_bag">
+            <hr>
+            <h2>Camping swing</h2>
+            <p>Fun swing for campings.</p>
+            <p><strong>Price: &euro;21.99</strong></p>
+        </div>
+        <div class="column">
+            <img src="Images/table-removebg-preview.png" alt="sleeping_bag">
+            <hr>
+            <h2>Portable meal table</h2>
+            <p>Good table environment for meal.</p>
+            <p><strong>Price: &euro;40.29</strong></p>
+        </div>
+        <div class="column">
+            <img src="Images/table-removebg-preview.png" alt="sleeping_bag">
+            <hr>
+            <h2>Portable meal table</h2>
+            <p>Good table environment for meal.</p>
+            <p><strong>Price: &euro;40.29</strong></p>
+        </div>
+    </div>
+        
+        
+        <!-- Add more column entries as needed -->
+    </div>
+</body>
+</html>

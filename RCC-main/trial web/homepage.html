@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="homepage">
+    <head>
+        <title>Retail Camping Company</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="style-popup.css" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            canvas {
+            display: block;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        </style>
+        <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+        <script async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZH_rrn9HRqjb2kYC4QDbZdxn-0tcWHiQ&callback=initMap">
+        </script>
+
+        <script>
+    let map;
+
+    async function initMap() {
+    const { Map } = await google.maps.importLibrary("maps");
+
+    map = new Map(document.getElementById("map"), {
+        center: { lat:-1.286389, lng: 36.817223 },
+        zoom: 15,
+    });
+    }
+
+    initMap();
+
+    function openChartInNewTab() {
+            // Open chart.html in a new tab
+            window.open('chart.html', '_blank');
+        }
+
+</script>
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    </head>
+    <body>
+        
+
+        <!--Beginning of header section-->
+        <header>
+            <h2><i>RETAIL CAMPING COMPANY</i></h2>
+        </header>
+        <!--End of header section-->
+
+        <!--Beginning of navigation section-->
+        <nav>
+            <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="Camping Equipment.html">Camping Equipment</a></li>
+            <li><a href="Furniture.html">Furniture</a></li>
+            <li><a href="Review Page.html">Review Page</a></li>
+            <li><a href="Basket.html">Basket</a></li>
+            <li><a href="Offers and Packages.html">Offers and Packages</a></li>
+            </ul>
+
+            <button class="weather" onclick="openChartInNewTab()">Camp area Weather</button>
+        </nav>
+        <!--End of navigation section-->
+        <!--beginning of slideshow-->
+        <!-- <div id="slider">
+             <figure> 
+                 <div class="slideshow"> 
+                    <div> 
+                        <img src="Images/Premium Vector _ Autumn mountains landscape with tree silhouettes and river at sunset_.jpeg" alt="bornfire">
+                        <img src="Images/Premium Vector _ Hiking the mountain background.jpeg">
+                        <img src="Images/Premium Vector _ Nature camp landscape with tents campfire backpack and lantern cartoon illustration.jpeg" alt="bonfire">
+                    </div> 
+                    <div> 
+                        <img src="Images/Mountain scenery on sunset with men.jpeg" alt="glamping tent">
+                        <img src="Images/Sunset Animation.jpeg" alt="bornfire">
+                        <img src="Images/Download Vector Beautiful Camping Illustration for free.jpeg" alt="bornfire">
+                 </div> 
+            </div> 
+         </figure>
+        </div> -->
+        <!--End of slideshow-->
+        <!--Beginning of section-->
+
+        <section>
+            <h1>Special offers are Available Now!!!</h1>
+            <br>
+            <section id="item list">
+            <div class="image-continer">
+                <div class="row">
+                    <div class="column">
+                        <img src="images/backpack-removebg-preview.png" alt="backpack" >
+                        <hr>
+                            <p>You don't need to leave out anything.</p>
+                            <p>Grab this ultimate backpack at <strong>&euro;429</strong>.</p>
+                    </div>
+                    <div class="column">
+                        <img src="images/greenwraper-removebg-preview.png" alt="greywraper" >
+                        <hr>
+                            <p>No better way to enjoy camping than keeping warm</p>
+                            <p>Strike a deal with a light and cozy warmer at a special price <strong>&euro;204</strong> only.</p>
+                    </div>
+                    
+                    <div class="column">
+                        <img src="images/greywraper-removebg-preview.png" alt="greenwraper" >
+                        <hr>
+                            <p>Is it too cold? We gotchu. Bringing you warming jacket at <strong>&euro;400</strong> .</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <img src="images/woolchair-removebg-preview.png" alt="Orange chair" >
+                        <hr>
+                        <p>No better chair to enjoy the bonfire and gaze the stars <strong>&euro;150</strong></p></div>
+                    <div class="column">
+                        <img src="images/outdoorchair-removebg-preview.png" alt="Outdoor chair" >
+                        <hr>
+                        <p>You wanna star gaze then this is what u need. <strong>&euro;403</strong></p>
+                    </div>
+                    <div class="column">
+                        <img src="images/combochairs-removebg-preview.png" alt="Twiwnchairs" >
+                        <hr>
+                        <p>keep your partners close by. Grab these partner chairs by only <strong>&euro;320</strong></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <img src="images/8CabinTent-removebg-preview.png" alt="8 personCabinTent" >
+                        <hr>
+                        <p>you want family camping? Then all you need is this 8 cabin tent for you and your loved ones at <strong>&euro;340</strong></p></div>
+                    <div class="column">
+                        <img src="Images/4_persontent-removebg-preview.png" alt="4 personTent" >
+                        <hr>
+                        <p>Feel comfort in our 4 person tent at only <strong>&euro;250</strong></p></div>
+                    <div class="column">
+                        <img src="Images/Tent-removebg-preview.png" alt="greentent" >
+                        <hr>
+                        <p>No need to rent a lounge when you can get this at affordabe prices  &<strong>&euro;120</strong> only. </p></div>
+                </div>
+                <h3>Be sure to checkout the equipments on special offers</h3>
+                </div>
+               
+        </section>
+             <!--start of about area-->
+             <section class="about-area" id="about">
+                <div class="container">
+                    <div class="about-title">
+                        <h4>About RCC</h4>
+                <p>Retail Camping Company Offers the best equipments to enjoy your camping experience.It has been on camping sector for more than a decade, rest assured to get the best experience.We've got you covered whether it's a crowd or solo plan, retail camping Company is here to cater for your camping needs.Secure this opportunity and purchase an item at an afforadable price.
+               </p>   
+            </section>
+            <!--End of  about section-->
+            <!--start of service section-->
+        <div class="bottom">
+            <section class="service-area">
+                <div class="container">
+                    <h2>services</h2>
+                </div>
+                <div class="Services">
+                    <div class="single-service">
+                        <h4>Glamping</h4>
+                        <img src="Images/Glamp on the Islands of North Saskatchewan River in Edmonton this Summer.jpeg" alt="service 1">
+                        <p>For campers who enjoy star gazing, retail camping company has got you covered.</p>
+                        <a href="#" class="rm">Read More</a>
+                </div>
+                <div class="single-service">
+                    <h4>Healing Camping</h4>
+                    <img src="Images/12 Free Outdoor Activities That Are Worth It - Society19 (1).jpeg" alt="service 2">
+                    <p>Health is wealth, mental health is important and retail camping company has got you covered. To escape the buzzling city retail camping company has got you.</p>
+                    <a href="#" class="rm">Read More</a>
+                
+            </div>
+            <div class="single-service">
+                <h4>Group Camping</h4>
+                <img src="Images/This Instagram Will Make You Rethink Your Life Goals.jpeg" alt="service 3">
+                <p>The more the merrier no better chance to enjoy a memorable camping moment with your friends and family with equipments at an afforadable prices. </p>
+                <a href="#" class="rm">Read More</a>
+        </div>
+        </section>
+     </div>
+            <!--end of services section-->
+            <section class="contact-area">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Contact</h2>
+                    </div>   
+                </div> 
+                <div class="contact">
+                        <div class="contact-form">
+                            <input type="text" placeholder="Your Name">
+                            <input type="text" placeholder="Your Email">
+                            <input type="text" placeholder="Your Subject">
+                            <textarea placeholder="Your Message"></textarea>
+                            <input type="submit" value="Send Message">
+                        </div>
+                </div>
+            </section>
+
+        <section class="map">
+            <div id="map">
+
+            </div>
+
+        </section>
+
+        <!--End of section-->
+
+        <!--Beginning of footer section-->
+        <footer>
+            <div class="contact-area">
+                <div class="single-contact">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <h4>Address: <span>Nairobi,Kenya</span></h4>
+                </div>
+                <div class="single-contact">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <h4>Email:<span>retailcampingcompany1@gmail.com</span> </h4>
+                </div>
+                <div class="single-contact">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <h4>Phone: <span>+254725092023</span></h4>
+                </div> 
+                 <!--Start of social media icons-->
+         <a href="#" class="fa fa-facebook"></a> 
+         <a href="#" class="fa fa-twitter"></a> 
+         <a href="#" class="fa fa-instagram"></a> 
+         <a href="#" class="fa fa-youtube"></a> 
+        </footer>
+        <!--End of footer section-->
+
+       
+
+
+
+    </body>
+</html>
+
+
